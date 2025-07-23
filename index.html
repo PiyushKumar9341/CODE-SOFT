@@ -3,16 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Portfolio</title>
+    <title>Your Name - Professional Portfolio</title>
+
+    <!-- Google Fonts: Poppins for headings, Open Sans for body -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Header Section (Hero) -->
+
     <header id="home">
-        <div class="container">
-            <h1>Your Name</h1> <p>A brief introduction or tagline about yourself.</p>
-            <nav>
-                <ul>
+
+        <!-- The animated-background div and its blobs are removed -->
+
+
+        <nav>
+            <div class="container nav-container">
+                <a href="#home" class="logo">Portfolio</a>
+                <button class="hamburger" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+                <ul id="main-nav">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -20,80 +38,199 @@
                     <li><a href="#resume">Resume</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-            </nav>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <div class="container">
+                <h1 class="animated-text">Hi, I'm PIYUSH KUMAR</h1>
+                <p class="animated-text delay-1">A passionate Web Developer focused on building beautiful and functional web experiences.</p>
+                <div class="hero-buttons animated-text delay-2">
+                    <a href="#projects" class="button button-primary">View My Work</a>
+                    <a href="#contact" class="button button-primary">Get In Touch</a>
+                </div>
+            </div>
         </div>
     </header>
 
-    <section id="about" class="section-padding">
+    <!-- About Section -->
+    <section id="about" class="section-padding animate-on-scroll">
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
-                <img src="images/your-photo.jpg" alt="Your Photo" class="profile-photo"> <p>
-                    Write a short bio here highlighting your skills and experience.
-                    For example: "I am a passionate web developer with X years of experience in front-end technologies like HTML, CSS, and JavaScript. I enjoy building responsive and user-friendly web applications..."
-                </p>
+                <img src="picofme (2).png" alt="Your Photo" class="profile-photo">
+                <div class="text-content">
+                    <p>
+                        Hello! I'm Piyush, a dedicated and enthusiastic web developer with a strong foundation in front-end technologies. I specialize in crafting responsive, user-friendly, and visually appealing websites and web applications.
+                    </p>
+                    <p>
+                        My journey into web development began with a curiosity for how websites work, which quickly evolved into a passion for creating them. I thrive on solving complex problems and continuously learning new technologies to deliver high-quality digital solutions.
+                    </p>
+                    <p>
+                        Outside of coding, I enjoy exploring the outdoors, such as hiking, reading, photography which helps me stay creative and balanced. I'm always looking for new challenges and opportunities to grow as a developer.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="section-padding">
+    <!-- Skills Section -->
+    <section id="skills" class="section-padding animate-on-scroll">
         <div class="container">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-                <li>Responsive Design</li>
-                <li>Git/GitHub</li>
-                <li>(Add more relevant skills)</li>
-            </ul>
+            <h2>My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML5</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-css3-alt"></i>
+                    <h3>CSS3</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-js-square"></i>
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-react"></i>
+                    <h3>React</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-node-js"></i>
+                    <h3>Node.js</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-java"></i>
+                    <h3>Java</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-git-alt"></i>
+                    <h3>Git & GitHub</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-database"></i>
+                    <h3>Databases</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud (AWS/Azure)</h3>
+                </div>
+                <!-- Add more skill items with relevant Font Awesome icons -->
+            </div>
         </div>
     </section>
 
-    <section id="projects" class="section-padding">
+    <!-- Projects Section -->
+
+    <section id="projects" class="section-padding animate-on-scroll">
         <div class="container">
-            <h2>Projects</h2>
+            <h2>Featured Projects</h2>
             <div class="project-grid">
+
+                <!-- Project 1 -->
+
                 <div class="project-item">
-                    <img src="images/project1.jpg" alt="Project 1 Thumbnail">
-                    <h3>Project Title 1</h3>
-                    <p>A brief description of your project, what it does, and technologies used.</p>
-                    <a href="link-to-project-live-demo" target="_blank">View Live</a> | <a href="link-to-github-repo" target="_blank">GitHub Repo</a>
+                    <img src="TODO List.webp" alt="Project 1 Thumbnail">
+                    <div class="project-info">
+                        <h3>Todo - List</h3>
+                        <p>A brief description of your project, what it does, and the key technologies used (e.g., React, Node.js, API Integration).</p>
+                        <div class="project-links">
+                            <a href="link-to-project-live-demo" target="_blank" class="button-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="link-to-github-repo" target="_blank" class="button-small"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Project 2 -->
+
                 <div class="project-item">
-                    <img src="images/project2.jpg" alt="Project 2 Thumbnail">
-                    <h3>Project Title 2</h3>
-                    <p>Description of your second project.</p>
-                    <a href="link-to-project-live-demo" target="_blank">View Live</a> | <a href="link-to-github-repo" target="_blank">GitHub Repo</a>
+                    <img src="https://placehold.co/600x400/E8F5E9/2C3E50?text=Project+2" alt="Project 2 Thumbnail">
+                    <div class="project-info">
+                        <h3>Project Title 2</h3>
+                        <p>Description of your second project, highlighting its features and your role in its development.</p>
+                        <div class="project-links">
+                            <a href="link-to-project-live-demo" target="_blank" class="button-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="link-to-github-repo" target="_blank" class="button-small"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Project 3  -->
+
+                <div class="project-item">
+                    <img src="https://placehold.co/600x400/FFF3E0/2C3E50?text=Project+3" alt="Project 3 Thumbnail">
+                    <div class="project-info">
+                        <h3>Project Title 3</h3>
+                        <p>A concise summary of your third project, focusing on the problem it solves or the value it provides.</p>
+                        <div class="project-links">
+                            <a href="link-to-project-live-demo" target="_blank" class="button-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="link-to-github-repo" target="_blank" class="button-small"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
                 </div>
+            </div>
         </div>
     </section>
 
-    <section id="resume" class="section-padding">
+    <!-- Resume Section -->
+
+    <section id="resume" class="section-padding animate-on-scroll">
         <div class="container">
-            <h2>Resume</h2>
-            <p>Download my resume to learn more about my professional experience.</p>
-            <a href="your-resume.pdf" download class="button">Download Resume (PDF)</a> </div>
+            <h2>My Resume</h2>
+            <p>Download my comprehensive resume to explore my professional experience, education, and detailed skill set.</p>
+            <a href="your-resume.pdf" download class="button button-primary"><i class="fas fa-download"></i> Download Resume (PDF)</a>
+        </div>
     </section>
 
-    <section id="contact" class="section-padding">
+    <!-- Contact Section -->
+
+    <section id="contact" class="section-padding animate-on-scroll">
         <div class="container">
-            <h2>Contact Me</h2>
-            <p>Feel free to reach out if you have any questions or opportunities!</p>
-            <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-            <p>Phone: +91 12345 67890 (Optional)</p>
+            <h2>Get In Touch</h2>
+            <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> Email: <a href="piyush.s9341@gmail.com">piyush.s9341@gmail.com</a></p>
+                <p><i class="fas fa-phone-alt"></i> Phone: +91 7091447111</p>
+                <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/piyush-kumar111/" target="_blank">https://www.linkedin.com/in/piyush-kumar111/</a></p>
+                <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/PiyushKumar9341" target="_blank">https://github.com/PiyushKumar9341</a></p>
             </div>
+
+            <!-- Basic Contact Form Example  -->
+
+            <form id="contact-form">
+                <h3>Send Me a Message</h3>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="button button-primary">Send Message</button>
+                <p id="form-message" class="message-text"></p>
+            </form>
+        </div>
     </section>
+
+    <!-- Footer -->
 
     <footer>
         <div class="container">
-            <p>&copy; <span id="current-year"></span> Your Name. All rights reserved.</p>
-            </div>
+            <p>&copy; <span id="current-year"></span> Piyush Kumar. All rights reserved.</p>
+            <p>Designed and Developed by Piyush Kumar</p>
+        </div>
     </footer>
 
-    <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+    <!-- Scroll to Top Button -->
+
+    <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
 </body>
 </html>
