@@ -2,30 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Professional Portfolio</title>
-
-    <!-- Google Fonts: Poppins for headings, Open Sans for body -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Piyush Kumar - Professional Web Developer Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header Section (Hero) -->
-
     <header id="home">
-
-        <!-- The animated-background div and its blobs are removed -->
-
-
         <nav>
             <div class="container nav-container">
                 <a href="#home" class="logo">Portfolio</a>
@@ -42,38 +32,44 @@
         </nav>
         <div class="hero-content">
             <div class="container">
-                <h1 class="animated-text">Hi, I'm PIYUSH KUMAR</h1>
-                <p class="animated-text delay-1">A passionate Web Developer focused on building beautiful and functional web experiences.</p>
-                <div class="hero-buttons animated-text delay-2">
-                    <a href="#projects" class="button button-primary">View My Work</a>
-                    <a href="#contact" class="button button-primary">Get In Touch</a>
+                <div class="hero-title-wrapper animated-text">
+                    <div class="hero-greeting">Hi, I'm</div>
+                    <div class="hero-name typing-animation animated-text delay-1">PIYUSH KUMAR</div>
                 </div>
+                <p class="animated-text delay-2">
+                    I bring digital visions to life, <strong>crafting pixel-perfect, high-performance web applications</strong> that captivate and engage. My passion is solving complex challenges with elegant, interactive solutions.
+                </p>
+                <div class="hero-buttons animated-text delay-3">
+                    <a href="#projects" class="button button-primary">View My Work</a> <a href="#contact" class="button button-primary">Get In Touch</a> </div>
             </div>
         </div>
     </header>
 
-    <!-- About Section -->
     <section id="about" class="section-padding animate-on-scroll">
         <div class="container">
             <h2>About Me</h2>
             <div class="about-content">
-                <img src="picofme (2).png" alt="Your Photo" class="profile-photo">
+                <div class="profile-photo-wrapper">
+                    <img src="profile.png" alt="Piyush Kumar's professional profile photo" class="profile-photo">
+                </div>
                 <div class="text-content">
-                    <p>
-                        Hello! I'm Piyush, a dedicated and enthusiastic web developer with a strong foundation in front-end technologies. I specialize in crafting responsive, user-friendly, and visually appealing websites and web applications.
+                    <p class="about-paragraph">
+                        Hello! I'm Piyush, a <strong>Digital Experience Architect</strong> driven by a passion for transforming complex ideas into intuitive, visually stunning web realities. I craft pixel-perfect interfaces that deliver seamless user journeys.
                     </p>
-                    <p>
-                        My journey into web development began with a curiosity for how websites work, which quickly evolved into a passion for creating them. I thrive on solving complex problems and continuously learning new technologies to deliver high-quality digital solutions.
+                    <div class="about-highlight-box">
+                        "I believe exceptional web experiences are built where <strong>creativity meets code</strong>, meticulously crafted to enhance every user's journey."
+                    </div>
+                    <p class="about-paragraph">
+                        My journey began with a deep fascination for <strong>how compelling digital interactions are built</strong>. This curiosity quickly ignited a passion for solving user problems and mastering new technologies, from <strong>efficient JavaScript frameworks</strong> to <strong>modern CSS methodologies</strong>, building innovative and robust solutions.
                     </p>
-                    <p>
-                        Outside of coding, I enjoy exploring the outdoors, such as hiking, reading, photography which helps me stay creative and balanced. I'm always looking for new challenges and opportunities to grow as a developer.
+                    <p class="about-paragraph">
+                        Beyond coding, <strong>hiking fuels my debugging persistence</strong>, and <strong>photography hones my eye for design details</strong>. This blend of analytical thinking and creative pursuit ensures I bring a holistic and balanced perspective to every digital project.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="section-padding animate-on-scroll">
         <div class="container">
             <h2>My Skills</h2>
@@ -81,142 +77,135 @@
                 <div class="skill-item">
                     <i class="fab fa-html5"></i>
                     <h3>HTML5</h3>
+                    <p class="skill-description">Semantic markup, accessibility</p>
                 </div>
                 <div class="skill-item">
                     <i class="fab fa-css3-alt"></i>
                     <h3>CSS3</h3>
+                    <p class="skill-description">Responsive design, animations (e.g. SCSS, Bootstrap, Tailwind)</p>
                 </div>
                 <div class="skill-item">
                     <i class="fab fa-js-square"></i>
                     <h3>JavaScript</h3>
+                    <p class="skill-description">DOM manipulation, asynchronous operations, ES6+</p>
                 </div>
                 <div class="skill-item">
                     <i class="fab fa-react"></i>
                     <h3>React</h3>
+                    <p class="skill-description">Component-based architecture, state management</p>
                 </div>
                 <div class="skill-item">
                     <i class="fab fa-node-js"></i>
                     <h3>Node.js</h3>
+                    <p class="skill-description">Backend APIs, server-side development</p>
                 </div>
                 <div class="skill-item">
                     <i class="fab fa-java"></i>
                     <h3>Java</h3>
+                    <p class="skill-description">Object-oriented programming, backend logic</p>
                 </div>
                 <div class="skill-item">
                     <i class="fab fa-git-alt"></i>
                     <h3>Git & GitHub</h3>
+                    <p class="skill-description">Version control, collaborative development</p>
                 </div>
                 <div class="skill-item">
                     <i class="fas fa-database"></i>
                     <h3>Databases</h3>
+                    <p class="skill-description">SQL (MySQL, PostgreSQL), NoSQL (MongoDB)</p>
                 </div>
                 <div class="skill-item">
                     <i class="fas fa-cloud"></i>
                     <h3>Cloud (AWS/Azure)</h3>
+                    <p class="skill-description">Basic cloud services, deployment</p>
                 </div>
-                <!-- Add more skill items with relevant Font Awesome icons -->
             </div>
         </div>
     </section>
-
-    <!-- Projects Section -->
 
     <section id="projects" class="section-padding animate-on-scroll">
         <div class="container">
             <h2>Featured Projects</h2>
             <div class="project-grid">
 
-                <!-- Project 1 -->
-
                 <div class="project-item">
-                    <img src="TODO List.webp" alt="Project 1 Thumbnail">
+                    <img src="TODO List.webp" alt="Thumbnail of a Todo List Application" loading="lazy">
                     <div class="project-info">
-                        <h3>Todo - List</h3>
-                        <p>A brief description of your project, what it does, and the key technologies used (e.g., React, Node.js, API Integration).</p>
+                        <h3>Interactive To-Do List Application</h3>
+                        <p>A responsive web application for managing daily tasks. Built using **HTML, CSS, and JavaScript**, it features task creation, deletion, and completion toggling, with local storage integration for persistent data. Demonstrates core front-end functionality and user interaction.</p>
                         <div class="project-links">
-                            <a href="link-to-project-live-demo" target="_blank" class="button-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="link-to-github-repo" target="_blank" class="button-small"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://advatodo.netlify.app/" target="_blank" class="button-small"><i class="fas fa-external-link-alt"></i> Live Demo</a> <a href="YOUR_TODO_LIST_GITHUB_REPO_URL" target="_blank" class="button-small"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-
                 <div class="project-item">
-                    <img src="https://placehold.co/600x400/E8F5E9/2C3E50?text=Project+2" alt="Project 2 Thumbnail">
+                    <img src="https://placehold.co/600x400/E8F5E9/2C3E50?text=Project+2+Image" alt="Example thumbnail for an E-commerce Product Page" loading="lazy">
                     <div class="project-info">
-                        <h3>Project Title 2</h3>
-                        <p>Description of your second project, highlighting its features and your role in its development.</p>
+                        <h3>E-commerce Product Page Simulation</h3>
+                        <p>A modern product display page built with **React** for dynamic content and user interaction. Features include product filtering, responsive design, and integration with a mock API for data retrieval.</p>
                         <div class="project-links">
-                            <a href="link-to-project-live-demo" target="_blank" class="button-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="link-to-github-repo" target="_blank" class="button-small"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="YOUR_PROJECT_2_LIVE_DEMO_URL" target="_blank" class="button-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="YOUR_PROJECT_2_GITHUB_REPO_URL" target="_blank" class="button-small"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3  -->
-
                 <div class="project-item">
-                    <img src="https://placehold.co/600x400/FFF3E0/2C3E50?text=Project+3" alt="Project 3 Thumbnail">
+                    <img src="https://placehold.co/600x400/FFF3E0/2C3E50?text=Project+3+Image" alt="Example thumbnail for a Simple Calculator Application" loading="lazy">
                     <div class="project-info">
-                        <h3>Project Title 3</h3>
-                        <p>A concise summary of your third project, focusing on the problem it solves or the value it provides.</p>
+                        <h3>Advanced Calculator Web App</h3>
+                        <p>An interactive scientific calculator application developed purely with **Vanilla JavaScript, HTML, and CSS**. It handles complex operations, follows order of operations, and features a clean, responsive UI.</p>
                         <div class="project-links">
-                            <a href="link-to-project-live-demo" target="_blank" class="button-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="link-to-github-repo" target="_blank" class="button-small"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="YOUR_PROJECT_3_LIVE_DEMO_URL" target="_blank" class="button-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="YOUR_PROJECT_3_GITHUB_REPO_URL" target="_blank" class="button-small"><i class="fab fa-github"></i> GitHub</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Resume Section -->
 
     <section id="resume" class="section-padding animate-on-scroll">
         <div class="container">
             <h2>My Resume</h2>
-            <p>Download my comprehensive resume to explore my professional experience, education, and detailed skill set.</p>
-            <a href="your-resume.pdf" download class="button button-primary"><i class="fas fa-download"></i> Download Resume (PDF)</a>
+            <p>Download my comprehensive resume to explore my professional experience, education, and detailed skill set, including projects and accomplishments.</p>
+            <a href="Piyush's Resume.pdf" download class="button button-primary"><i class="fas fa-download"></i> Download Resume (PDF)</a>
         </div>
     </section>
-
-    <!-- Contact Section -->
 
     <section id="contact" class="section-padding animate-on-scroll">
         <div class="container">
             <h2>Get In Touch</h2>
-            <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+            <p>I'm always open to new opportunities, collaborations, and conversations about web development. Feel free to reach out!</p>
             <div class="contact-info">
-                <p><i class="fas fa-envelope"></i> Email: <a href="piyush.s9341@gmail.com">piyush.s9341@gmail.com</a></p>
-                <p><i class="fas fa-phone-alt"></i> Phone: +91 7091447111</p>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:piyush.s9341@gmail.com">piyush.s9341@gmail.com</a></p>
+                
                 <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/piyush-kumar111/" target="_blank">https://www.linkedin.com/in/piyush-kumar111/</a></p>
                 <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/PiyushKumar9341" target="_blank">https://github.com/PiyushKumar9341</a></p>
             </div>
 
-            <!-- Basic Contact Form Example  -->
+             <form id="contact-form" name="contact" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="contact" />
 
-            <form id="contact-form">
-                <h3>Send Me a Message</h3>
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="6" required></textarea>
-                </div>
-                <button type="submit" class="button button-primary">Send Message</button>
-                <p id="form-message" class="message-text"></p>
-            </form>
+                        <h3>Send Me a Message</h3>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="button button-primary">Send Message</button>
+                        <p id="form-message" class="message-text"></p>
+             </form>
         </div>
     </section>
-
-    <!-- Footer -->
 
     <footer>
         <div class="container">
@@ -225,12 +214,9 @@
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-
     <button id="scrollToTopBtn" title="Go to top"><i class="fas fa-arrow-up"></i></button>
 
-    <!-- JavaScript -->
-
     <script src="script.js"></script>
+
 </body>
 </html>

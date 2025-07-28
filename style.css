@@ -1,19 +1,20 @@
 /* --- CSS Variables for a Consistent Design System --- */
 :root {
-    --primary-color: #7b1fa2; /* Medium Purple - strong accent for interactive elements */
-    --secondary-color: #424242; /* Dark Grey - for text on light backgrounds, and some headings */
-    --accent-color: #ffb300;   /* Amber - warm highlight/hover */
-    --light-bg: #212121;       /* Dark Grey - main background for dark theme */
-    --dark-bg: #121212;        /* Very Dark Grey/Black - for hero background, footer, nav */
-    --text-color: #e0e0e0;     /* Light Grey - standard text on dark backgrounds */
-    --light-text: #ffffff;     /* White - for text on very dark backgrounds (hero, nav) */
-    --card-bg: #2c2c2c;        /* Slightly lighter dark grey for cards */
-    --border-color: #424242;   /* Darker border for inputs/cards */
-    --shadow-light: 0 6px 20px rgba(0, 0, 0, 0.25); /* Soft shadow for cards */
-    --shadow-heavy: 0 12px 40px rgba(0, 0, 0, 0.4); /* Heavier shadow on hover for dark theme */
-    --transition-speed: 0.4s ease-in-out; /* Smooth transitions */
-    --white-glow-shadow: 0 0 25px rgba(255, 255, 255, 0.4); /* White glow shadow variable */
-    --input-focus-glow: 0 0 0 0.2rem rgba(255, 255, 255, 0.3); /* Input focus glow variable */
+    --primary-color: #7b1fa2;
+    --secondary-color: #424242;
+    --accent-color: #ffb300;
+    --theme-background: #212121;
+    --theme-surface: #2c2c2c;
+    --theme-deep-background: #121212;
+    --text-on-surface: #e0e0e0;
+    --text-on-background: #e0e0e0;
+    --text-on-deep-background: #ffffff;
+    --border-color: #424242;
+    --shadow-light: 0 6px 20px rgba(0, 0, 0, 0.25);
+    --shadow-heavy: 0 12px 40px rgba(0, 0, 0, 0.4);
+    --white-glow-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+    --input-focus-glow: 0 0 0 0.2rem rgba(255, 255, 255, 0.3);
+    --transition-speed: 0.4s ease-in-out;
 }
 
 /* --- Global Styles & Resets --- */
@@ -24,14 +25,14 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.7;
-    color: var(--text-color);
-    background-color: var(--light-bg);
+    color: var(--text-on-background);
+    background-color: var(--theme-background);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -48,18 +49,17 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Poppins', sans-serif;
-    color: var(--light-text); /* Headings color for dark theme */
+    color: var(--text-on-deep-background);
     margin-bottom: 30px;
     text-align: center;
     line-height: 1.2;
-    transition: text-shadow var(--transition-speed), color var(--transition-speed); /* Added transition for smooth glow */
+    transition: text-shadow var(--transition-speed), color var(--transition-speed);
 }
 
 h1 { font-size: 3.8rem; }
 h2 { font-size: 2.8rem; position: relative; padding-bottom: 15px; }
 h3 { font-size: 2rem; }
 
-/* Underline effect for H2 headings */
 h2::after {
     content: '';
     position: absolute;
@@ -72,18 +72,15 @@ h2::after {
     border-radius: 2px;
 }
 
-/* White glow on hover for H2 headings within sections */
 section h2:hover {
     text-shadow: var(--white-glow-shadow);
-    color: var(--light-text); /* Ensure text stays white/light on hover */
+    color: var(--text-on-deep-background);
 }
 
-/* White glow on hover for H3 headings within sections (e.g., Project Titles, Skill Names) */
 section h3:hover {
     text-shadow: var(--white-glow-shadow);
-    color: var(--light-text); /* Ensure text stays white/light on hover */
+    color: var(--text-on-deep-background);
 }
-
 
 p {
     margin-bottom: 15px;
@@ -112,18 +109,20 @@ a:hover {
     transition: all var(--transition-speed);
     border: 2px solid;
     box-shadow: var(--shadow-light);
+    text-decoration: none;
+    white-space: normal; /* Ensure text wraps normally */
 }
 
 .button-primary {
     background: var(--primary-color);
-    color: var(--light-text);
+    color: var(--text-on-deep-background);
     border-color: var(--primary-color);
 }
 
 .button-primary:hover {
-    background: var(--primary-color); /* Keep primary color on hover */
-    border-color: var(--light-text); /* Border color to light-text (white) on hover */
-    color: var(--light-text);
+    background: var(--primary-color);
+    border-color: var(--text-on-deep-background);
+    color: var(--text-on-deep-background);
     text-decoration: none;
     transform: translateY(-3px);
     box-shadow: var(--shadow-heavy);
@@ -133,15 +132,16 @@ a:hover {
     padding: 8px 15px;
     font-size: 0.95rem;
     border-radius: 25px;
-    border: 1px solid var(--light-text); /* **CHANGED: Border color to light-text (white)** */
-    color: var(--light-text); /* **CHANGED: Text color to light-text (white)** */
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
     background: transparent;
 }
 
 .button-small:hover {
-    background: var(--primary-color); /* **CHANGED: Background to primary color on hover** */
-    color: var(--light-text);
+    background: var(--primary-color);
+    color: var(--text-on-deep-background);
     text-decoration: none;
+    transform: translateY(-3px);
 }
 
 .button-small i {
@@ -150,22 +150,23 @@ a:hover {
 
 /* --- Header (Hero Section) --- */
 header {
-    /* Dynamic Gradient Background: Black to Violet */
-    background: linear-gradient(135deg, #0a0a0a 0%, #4a148c 100%); /* Black to Darker Purple Gradient */
+    background: linear-gradient(135deg, #0a0a0a 0%, #4a148c 100%);
     background-size: 200% 200%;
-    animation: gradientShift 10s linear infinite alternate; /* Faster (10s) and linear timing for continuous feel */
-    color: var(--light-text);
+    animation: gradientShift 10s linear infinite alternate;
+    
+    overflow: hidden;
+    
+    color: var(--text-on-deep-background);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden;
     padding-top: 80px;
 }
 
-/* Re-added subtle background pattern */
+/* Animated Hexagonal Grid Background for header::before */
 header::before {
     content: '';
     position: absolute;
@@ -173,59 +174,127 @@ header::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="25" cy="25" r="3" fill="%23ffffff" fill-opacity="0.1"/><circle cx="75" cy="75" r="3" fill="%23ffffff" fill-opacity="0.1"/></svg>');
-    background-size: 50px 50px;
-    opacity: 0.2;
-    z-index: 1; /* Ensure it's behind hero content but above main gradient */
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path fill="%23ffffff" fill-opacity="0.05" d="M38.5 25L50 18.25 61.5 25 61.5 38.5 50 45.25 38.5 38.5Z M38.5 75L50 68.25 61.5 75 61.5 88.5 50 95.25 38.5 88.5Z M88.5 25L100 18.25 100 38.5 88.5 45.25 77 38.5 77 25Z M-11.5 25L0 18.25 0 38.5 -11.5 45.25 -23 38.5 -23 25Z M38.5 0L50 -6.75 61.5 0 61.5 13.5 50 20.25 38.5 13.5Z M-11.5 75L0 68.25 0 88.5 -11.5 95.25 -23 88.5 -23 75Z M88.5 75L100 68.25 100 88.5 88.5 95.25 77 88.5 77 75Z M12.5 50L24 43.25 24 63.5 12.5 70.25 1 63.5 1 50Z M62.5 50L74 43.25 74 63.5 62.5 70.25 51 63.5 51 50Z M38.5 50L50 43.25 61.5 50 61.5 63.5 50 70.25 38.5 63.5Z"/></svg>');
+    background-size: 150px 150px;
+    opacity: 0.15;
+    z-index: 1;
+    animation: panBackground 30s linear infinite;
+    pointer-events: none;
 }
 
+/* Subtle Animating White Background Glow */
+header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 60%);
+    background-size: 150% 150%;
+    opacity: 0.1;
+    z-index: 1;
+    animation: backgroundGlowMove 25s ease-in-out infinite alternate;
+    pointer-events: none;
+    filter: blur(5px);
+}
 
-/* Gradient Animation Keyframes */
+/* Keyframes for original gradientShift (remains) */
 @keyframes gradientShift {
     0% { background-position: 0% 0%; }
     100% { background-position: 100% 100%; }
 }
 
-/* **REMOVED: Abstract Blob/Particle Animation styles** */
-/* The following CSS rules are removed to eliminate the "dots":
-.hero-bg-animation { ... }
-.hero-bg-animation div { ... }
-.hero-bg-animation .blob-1 { ... }
-.hero-bg-animation .blob-2 { ... }
-.hero-bg-animation .blob-3 { ... }
-.hero-bg-animation .blob-4 { ... }
-.hero-bg-animation .blob-5 { ... }
-@keyframes floatAndMorph { ... }
-*/
+/* Keyframes for Hexagonal Grid panning (remains) */
+@keyframes panBackground {
+    from { background-position: 0% 0%; }
+    to { background-position: 100% 100%; }
+}
+
+/* Keyframes for Background White Glow Movement */
+@keyframes backgroundGlowMove {
+    0% { background-position: 0% 0%; opacity: 0.1; }
+    25% { background-position: 50% 25%; opacity: 0.15; }
+    50% { background-position: 100% 50%; opacity: 0.1; }
+    75% { background-position: 50% 75%; opacity: 0.15; }
+    100% { background-position: 0% 0%; opacity: 0.1; }
+}
 
 
 .hero-content {
     text-align: center;
     position: relative;
-    z-index: 2; /* Ensure hero content is above background and pattern */
-    padding: 20px;
+    z-index: 2;
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    transform: translateY(-30px);
 }
 
-.hero-content h1 {
-    font-size: 4.8rem;
+/* NEW STYLES FOR THE RESTRUCTURED TITLE AND CREATIVE ANIMATIONS */
+.hero-title-wrapper {
     margin-bottom: 20px;
-    color: var(--light-text);
+}
+
+.hero-greeting {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4.8rem;
+    font-weight: 700;
+    color: var(--text-on-deep-background);
     text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+    line-height: 1.2;
+    margin-bottom: -10px;
     opacity: 0;
-    transform: translateY(20px);
     animation: fadeInSlideUp var(--transition-speed) forwards;
 }
 
+.hero-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4.8rem;
+    font-weight: 700;
+    color: var(--text-on-deep-background);
+   
+    margin-top: 0;
+
+    /* Typing Animation */
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid var(--accent-color);
+    width: 0;
+    animation: typing 2.5s steps(20, end) forwards 0.5s,
+               blink-caret 0.75s step-end infinite 3s;
+
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+    animation-name: typing, blink-caret;
+    animation-duration: 2.5s, 0.75s;
+    animation-timing-function: steps(20, end), step-end;
+    animation-iteration-count: 1, infinite;
+    animation-fill-mode: forwards, none;
+    animation-delay: 0.5s, 3s;
+}
+
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--accent-color); }
+}
+
+
 .hero-content p {
     font-size: 1.6rem;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     color: rgba(255,255,255,0.9);
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     opacity: 0;
-    transform: translateY(20px);
     animation: fadeInSlideUp var(--transition-speed) forwards;
+    animation-delay: 3.5s;
 }
 
 .hero-buttons {
@@ -235,12 +304,11 @@ header::before {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInSlideUp var(--transition-speed) forwards;
+    margin-top: 20px;
+    animation-delay: 4s;
 }
 
-/* Animation Delays for sequential reveal */
-.animated-text.delay-1 { animation-delay: 0.3s; }
-.animated-text.delay-2 { animation-delay: 0.6s; }
-
+/* Original fadeInSlideUp keyframes */
 @keyframes fadeInSlideUp {
     from {
         opacity: 0;
@@ -259,7 +327,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(18, 18, 18, 0.98); /* Darker background for nav */
+    background: var(--theme-deep-background);
     padding: 15px 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     z-index: 1000;
@@ -275,7 +343,7 @@ nav {
     font-family: 'Poppins', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--light-text);
+    color: var(--text-on-deep-background);
     transition: color var(--transition-speed);
 }
 
@@ -291,14 +359,13 @@ nav {
 }
 
 #main-nav li a {
-    color: var(--light-text);
+    color: var(--text-on-deep-background);
     font-weight: 600;
     padding: 10px 0;
     position: relative;
     transition: color var(--transition-speed);
 }
 
-/* Active Nav Link Indicator */
 #main-nav li a::after {
     content: '';
     position: absolute;
@@ -326,7 +393,7 @@ nav {
     display: none;
     background: none;
     border: none;
-    color: var(--light-text);
+    color: var(--text-on-deep-background);
     font-size: 2.2rem;
     cursor: pointer;
     padding: 5px 10px;
@@ -339,13 +406,15 @@ nav {
 
 /* --- About Section --- */
 #about {
-    background-color: var(--card-bg); /* Card background for dark theme */
-    color: var(--text-color); /* Text color for about section */
+    background-color: var(--theme-surface);
+    color: var(--text-on-surface);
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 #about .about-content {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Desktop default */
     align-items: flex-start;
     gap: 60px;
     max-width: 1000px;
@@ -353,25 +422,81 @@ nav {
     text-align: left;
 }
 
-#about .profile-photo {
+/* NEW: Wrapper for perfect circular image */
+.profile-photo-wrapper {
     min-width: 300px;
     height: 300px;
     border-radius: 50%;
-    object-fit: cover;
+    overflow: hidden;
     border: 8px solid var(--primary-color);
     box-shadow: var(--shadow-heavy);
     flex-shrink: 0;
     transition: box-shadow var(--transition-speed);
+    animation: none !important; /* No element glow */
 }
 
-#about .profile-photo:hover {
-    box-shadow: var(--white-glow-shadow); /* White glow on hover */
+/* Ensure image fills the wrapper */
+#about .profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    transition: none;
 }
+
+.profile-photo-wrapper:hover {
+    box-shadow: var(--white-glow-shadow);
+}
+
+
+/* Animation for profile photo and text elements */
+/* Initial state for all animatable children (updated for photo wrapper) */
+#about .profile-photo-wrapper,
+#about .text-content p,
+#about .about-highlight-box {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity var(--transition-speed), transform var(--transition-speed);
+}
+
+/* When the section is revealed, animate its children (corrected specificity with !important) */
+#about.revealed .profile-photo-wrapper {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition-delay: 0.2s;
+}
+
+#about.revealed .text-content p:nth-of-type(1) {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition-delay: 0.4s;
+}
+
+#about.revealed .about-highlight-box {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition-delay: 0.6s;
+}
+
+#about.revealed .text-content p:nth-of-type(2) {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition-delay: 0.8s;
+}
+
+#about.revealed .text-content p:nth-of-type(3) {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition-delay: 1.0s;
+}
+
 
 /* --- Skills Section --- */
 #skills {
-    background-color: var(--light-bg); /* Light background for dark theme */
-    color: var(--text-color); /* Text color for skills section */
+    background-color: var(--theme-background);
+    color: var(--text-on-background);
 }
 
 #skills .skills-grid {
@@ -383,19 +508,20 @@ nav {
 }
 
 .skill-item {
-    background: var(--card-bg); /* Card background for dark theme */
+    background: var(--theme-surface);
     padding: 30px 20px;
     border-radius: 8px;
     box-shadow: var(--shadow-light);
     text-align: center;
     transition: transform var(--transition-speed), box-shadow var(--transition-speed), background-color var(--transition-speed), color var(--transition-speed);
+    animation: none !important; /* No element glow */
 }
 
 .skill-item:hover {
-    background-color: var(--primary-color); /* Vibrant background on hover */
-    color: var(--light-text); /* Light text on hover */
+    background-color: var(--primary-color);
+    color: var(--text-on-deep-background);
     transform: translateY(-8px);
-    box-shadow: var(--white-glow-shadow); /* White glow on hover */
+    box-shadow: var(--white-glow-shadow);
 }
 
 .skill-item i {
@@ -406,24 +532,36 @@ nav {
 }
 
 .skill-item:hover i {
-    color: var(--light-text); /* Light icon color on hover */
+    color: var(--text-on-deep-background);
 }
 
 .skill-item h3 {
     font-size: 1.3rem;
     margin-bottom: 0;
-    color: var(--light-text); /* Heading color for skill item */
+    color: var(--text-on-deep-background);
     transition: color var(--transition-speed);
 }
 
 .skill-item:hover h3 {
-    color: var(--light-text); /* Light heading color on hover */
+    color: var(--text-on-deep-background);
+}
+
+.skill-item p.skill-description {
+    font-size: 0.9em;
+    color: var(--text-on-surface);
+    margin-top: 5px;
+    margin-bottom: 0;
+    transition: color var(--transition-speed);
+}
+
+.skill-item:hover p.skill-description {
+    color: var(--text-on-deep-background);
 }
 
 /* --- Projects Section --- */
 #projects {
-    background-color: var(--card-bg); /* Card background for dark theme */
-    color: var(--text-color); /* Text color for projects section */
+    background-color: var(--theme-surface);
+    color: var(--text-on-surface);
 }
 
 #projects .project-grid {
@@ -433,7 +571,7 @@ nav {
 }
 
 .project-item {
-    background: var(--card-bg); /* Card background for dark theme */
+    background: var(--theme-surface);
     border-radius: 8px;
     box-shadow: var(--shadow-light);
     text-align: center;
@@ -444,7 +582,7 @@ nav {
 
 .project-item:hover {
     transform: translateY(-8px);
-    box-shadow: var(--white-glow-shadow); /* White glow on hover */
+    box-shadow: var(--white-glow-shadow);
 }
 
 .project-item img {
@@ -452,6 +590,8 @@ nav {
     height: 250px;
     object-fit: cover;
     border-bottom: 1px solid var(--border-color);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .project-info {
@@ -465,13 +605,13 @@ nav {
 .project-info h3 {
     margin-top: 0;
     margin-bottom: 10px;
-    color: var(--light-text); /* Heading color for project item */
+    color: var(--text-on-deep-background);
     font-size: 1.6rem;
 }
 
 .project-info p {
     font-size: 1em;
-    color: var(--text-color); /* Text color for project item */
+    color: var(--text-on-surface);
     margin-bottom: 20px;
     flex-grow: 1;
 }
@@ -488,22 +628,24 @@ nav {
     font-weight: 600;
     padding: 8px 15px;
     border-radius: 25px;
-    border: 1px solid var(--light-text); /* **CHANGED: Border color to light-text (white)** */
-    color: var(--light-text); /* **CHANGED: Text color to light-text (white)** */
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
     background: transparent;
+    transition: all var(--transition-speed);
 }
 
 .project-links a:hover {
-    background: var(--primary-color); /* **CHANGED: Background to primary color on hover** */
-    color: var(--light-text);
+    background: var(--primary-color);
+    color: var(--text-on-deep-background);
     text-decoration: none;
+    transform: translateY(-3px);
 }
 
 /* --- Resume Section --- */
 #resume {
-    background-color: var(--light-bg); /* Light background for dark theme */
+    background-color: var(--theme-background);
     text-align: center;
-    color: var(--text-color); /* Text color for resume section */
+    color: var(--text-on-background);
 }
 
 #resume p {
@@ -516,9 +658,9 @@ nav {
 
 /* --- Contact Section --- */
 #contact {
-    background-color: var(--card-bg); /* Card background for dark theme */
+    background-color: var(--theme-surface);
     text-align: center;
-    color: var(--text-color); /* Text color for contact section */
+    color: var(--text-on-surface);
 }
 
 #contact p {
@@ -529,10 +671,12 @@ nav {
 .contact-info {
     margin-bottom: 50px;
     font-size: 1.1rem;
+    text-align: center;
 }
 
 .contact-info p {
     margin-bottom: 10px;
+    text-align: center;
 }
 
 .contact-info i {
@@ -545,7 +689,7 @@ nav {
 #contact-form {
     max-width: 700px;
     margin: 40px auto 0;
-    background: var(--light-bg); /* Form background for dark theme */
+    background: var(--theme-background);
     padding: 40px;
     border-radius: 8px;
     box-shadow: var(--shadow-light);
@@ -555,7 +699,7 @@ nav {
 #contact-form h3 {
     text-align: center;
     margin-bottom: 30px;
-    color: var(--light-text); /* Heading color for contact form */
+    color: var(--text-on-deep-background);
 }
 
 .form-group {
@@ -566,7 +710,7 @@ nav {
     display: block;
     margin-bottom: 10px;
     font-weight: 600;
-    color: var(--text-color); /* Label color for dark theme */
+    color: var(--text-on-surface);
     font-size: 1.1rem;
 }
 
@@ -575,11 +719,11 @@ nav {
 .form-group textarea {
     width: 100%;
     padding: 15px;
-    border: 1px solid var(--border-color); /* Border color for inputs */
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     font-size: 1em;
-    background-color: var(--dark-bg); /* Input background for dark theme */
-    color: var(--light-text); /* Input text color for dark theme */
+    background-color: var(--theme-deep-background);
+    color: var(--text-on-deep-background);
     transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
 }
 
@@ -587,7 +731,7 @@ nav {
 .form-group input[type="email"]:focus,
 .form-group textarea:focus {
     border-color: var(--primary-color);
-    box-shadow: var(--input-focus-glow); /* Using input-focus-glow variable */
+    box-shadow: var(--input-focus-glow);
     outline: none;
 }
 
@@ -612,8 +756,8 @@ nav {
 
 /* --- Footer --- */
 footer {
-    background: var(--dark-bg); /* Dark background for footer */
-    color: var(--light-text);
+    background: var(--theme-deep-background);
+    color: var(--text-on-deep-background);
     text-align: center;
     padding: 40px 0;
     font-size: 0.95em;
@@ -625,14 +769,13 @@ footer p {
 
 /* --- Scroll to Top Button --- */
 #scrollToTopBtn {
-    display: none;
     position: fixed;
     bottom: 30px;
     right: 30px;
     z-index: 99;
     font-size: 24px;
     background-color: var(--primary-color);
-    color: var(--light-text);
+    color: var(--text-on-deep-background);
     border: none;
     border-radius: 50%;
     width: 50px;
@@ -641,7 +784,12 @@ footer p {
     text-align: center;
     cursor: pointer;
     box-shadow: var(--shadow-heavy);
-    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    opacity: 0;
+    visibility: hidden;
+    transition: background-color var(--transition-speed),
+                transform var(--transition-speed),
+                opacity var(--transition-speed),
+                visibility var(--transition-speed);
 }
 
 #scrollToTopBtn:hover {
@@ -659,35 +807,101 @@ footer p {
         padding: 80px 0;
     }
 
-    .hero-content h1 {
-        font-size: 3.5rem;
+    .hero-content {
+        transform: translateY(-20px);
     }
+
+    .hero-greeting {
+        font-size: 4.0rem; /* Increased for mobile/tablet */
+        margin-bottom: -15px; /* Adjusted spacing */
+    }
+    .hero-name {
+        font-size: 4.5rem; /* Increased for mobile/tablet */
+    }
+
     .hero-content p {
         font-size: 1.4rem;
+        max-width: 90%;
+        padding: 0 10px;
     }
+
+    .hero-buttons .button {
+        padding: 12px 25px;
+        font-size: 1.0rem;
+        width: 90%;
+        max-width: 350px;
+        margin: 0 auto; /* Ensure buttons are centered when stacked */
+    }
+
 
     #main-nav {
         gap: 20px;
     }
 
-    #about .about-content {
-        flex-direction: column;
-        align-items: center;
+    #about {
+        padding-top: 120px;
+    }
+
+    .about-content {
+        flex-direction: column !important;
+        align-items: center !important;
         text-align: center;
         gap: 40px;
     }
 
-    #about .profile-photo {
+    .profile-photo-wrapper {
         min-width: 250px;
         height: 250px;
+        animation: none !important;
+        box-shadow: var(--shadow-heavy);
     }
+
+    #about .text-content {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    #about .text-content p, #about .about-highlight-box {
+        text-align: center;
+    }
+
 
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .skill-item {
+        animation: none !important;
+        box-shadow: var(--shadow-light);
+    }
+    .skill-item i {
+        font-size: 2.5rem;
+    }
+    .skill-item h3 {
+        font-size: 1.2rem;
+    }
+    .skill-item p.skill-description {
+        font-size: 0.85em;
     }
 
+
     .project-grid {
+        display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+    .project-info h3 {
+        font-size: 1.4rem;
+    }
+    .project-info p {
+        font-size: 0.95em;
+    }
+    .project-links a.button-small {
+        padding: 6px 12px;
+        font-size: 0.9em;
     }
 }
 
@@ -696,11 +910,37 @@ footer p {
     h2 { font-size: 2rem; }
     h3 { font-size: 1.6rem; }
 
-    .hero-content h1 {
-        font-size: 3rem;
+    .hero-content {
+        padding: 50px 15px;
+        min-height: auto;
+        transform: translateY(-15px);
     }
+
+    .hero-greeting {
+        font-size: 2.5rem; /* Adjusted for mobile */
+        margin-bottom: -10px;
+    }
+    .hero-name {
+        font-size: 3.8rem; /* Adjusted for mobile */
+        white-space: normal; /* Allow wrap for long names on small screen */
+    }
+
     .hero-content p {
         font-size: 1.2rem;
+        max-width: 90%;
+        padding: 0 5px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+    }
+
+    .button {
+        width: 80%;
+        max-width: 300px;
+        margin: 0 auto;
     }
 
     /* Mobile Navigation */
@@ -715,23 +955,24 @@ footer p {
         top: 100%;
         left: 0;
         width: 100%;
-        background: rgba(18, 18, 18, 0.98); /* Darker background for mobile nav */
+        background: var(--theme-deep-background);
         box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         padding: 20px 0;
+        transition: transform var(--transition-speed), opacity var(--transition-speed);
+        transform: translateY(-10px);
+        opacity: 0;
+        pointer-events: none;
     }
 
     #main-nav.active {
         display: flex;
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
     }
 
     #main-nav li {
         margin: 10px 0;
-    }
-
-    #main-nav li a {
-        display: block;
-        padding: 10px 20px;
-        font-size: 1.1em;
     }
 
     #main-nav li a::after {
@@ -746,28 +987,46 @@ footer p {
 
     .button {
         width: 80%;
+        max-width: 300px;
         margin: 0 auto;
     }
 
-    #about .profile-photo {
+    #about {
+        padding-top: 100px;
+    }
+
+    .profile-photo-wrapper {
         min-width: 200px;
         height: 200px;
+        animation: none !important;
+        box-shadow: var(--shadow-heavy);
     }
 
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        max-width: 450px;
+        margin: 0 auto;
     }
-
+    .skill-item {
+        animation: none !important;
+        box-shadow: var(--shadow-light);
+    }
+    .skill-item i {
+        font-size: 2.2rem;
+    }
     .skill-item h3 {
         font-size: 1.1rem;
     }
-
-    .skill-item i {
-        font-size: 2.8rem;
+    .skill-item p.skill-description {
+        font-size: 0.8em;
     }
 
-    #contact-form {
-        padding: 30px 20px;
+    .project-info h3 {
+        font-size: 1.3rem;
+    }
+    .project-info p {
+        font-size: 0.9em;
     }
 }
 
@@ -776,11 +1035,25 @@ footer p {
     h2 { font-size: 1.8rem; }
     h3 { font-size: 1.4rem; }
 
-    .hero-content h1 {
-        font-size: 2.5rem;
+    .hero-content {
+        padding: 30px 10px;
+        transform: translateY(-10px);
     }
+
+    .hero-greeting {
+        font-size: 2.0rem;
+        margin-bottom: -8px;
+    }
+    .hero-name {
+        font-size: 3.2rem;
+        margin-top: -8px;
+        white-space: normal; /* Allow wrap for long names on smallest screen */
+    }
+
     .hero-content p {
-        font-size: 1.0rem; /* Adjusted for smaller screens */
+        font-size: 1.0rem;
+        max-width: none;
+        padding: 0 10px;
     }
 
     .container {
@@ -788,15 +1061,40 @@ footer p {
     }
 
     .button {
-        padding: 12px 25px;
-        font-size: 1rem;
+        padding: 10px 20px;
+        font-size: 0.9rem;
     }
 
-    #about .profile-photo {
+    #about .profile-photo-wrapper {
         width: 180px;
         height: 180px;
+        animation: none !important;
+        box-shadow: var(--shadow-heavy);
     }
     .skills-grid {
         grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    .skill-item {
+        animation: none !important;
+        box-shadow: var(--shadow-light);
+    }
+    .skill-item i {
+        font-size: 1.8rem;
+    }
+    .skill-item h3 {
+        font-size: 0.95rem;
+    }
+    .skill-item p.skill-description {
+        font-size: 0.75em;
+    }
+
+    .project-info h3 {
+        font-size: 1.2rem;
+    }
+    .project-info p {
+        font-size: 0.85em;
     }
 }
